@@ -8,12 +8,12 @@ license=('MIT')
 arch=('any')
 url=('https://github.com/koutheir/speedport-w724v-external-ip-address')
 depends=('coreutils' 'jq' 'curl')
-source=('https://github.com/koutheir/speedport-w724v-external-ip-address/archive/release1.0.tar.gz')
+source=("https://github.com/koutheir/${pkgname}/archive/release${pkgver}.tar.gz")
 md5sums=('637c45dcdbf14174c67342946d74f552')
 
 package() {
 	install -Dm755 ${srcdir}/${pkgname}-release${pkgver}/speedport-w724v-external-ip-address ${pkgdir}/usr/bin/speedport-w724v-external-ip-address
-	install -Dm755 ${srcdir}/${pkgname}-release${pkgver}//device_password.conf ${pkgdir}/etc/speedport_w724v/device_password.conf
+	install -Dm755 ${srcdir}/${pkgname}-release${pkgver}/device_password.conf ${pkgdir}/etc/speedport_w724v/device_password.conf
 }
 
 post_install() {
